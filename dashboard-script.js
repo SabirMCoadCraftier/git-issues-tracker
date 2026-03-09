@@ -66,6 +66,8 @@ async function loadMainData() {
         loader_div.style.display = "none";
     }
 }
+
+
 // render cards
 function draw_ui(lst) {
 
@@ -188,3 +190,22 @@ function loadStatus(type, b) {
     }
     if (b) b.classList.add("active");
 }
+
+// show all
+function loadAll(b) {
+    draw_ui(my_db);
+    show_total(my_db);
+
+    var btns = document.getElementsByClassName("tab-btn");
+
+    for (var w = 0; w < btns.length; w++) {
+        btns[w].classList.remove("active");
+    }
+
+    if (b) b.classList.add("active");
+}
+
+// start
+window.onload = function () {
+    loadMainData();
+};
