@@ -1,0 +1,149 @@
+/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #F8FAFC;
+    color: #1F2328;
+}
+
+/* --- Navigation Bar --- */
+.top-nav {
+    background: #ffffff;
+    padding: 20px 0;
+    border-bottom: 1px solid #E4E4E7;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.nav-logo { width: 32px; }
+
+.nav-right {
+    display: flex;
+    gap: 12px;
+}
+
+.search-box input {
+    padding: 10px 14px;
+    border: 1px solid #E4E4E7;
+    border-radius: 6px;
+    width: 250px;
+    font-size: 14px;
+    outline: none;
+}
+
+.new-issue-btn {
+    background: #4A00FF;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* --- Content Wrapper --- */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 6px 20px;
+    border: 1px solid #E4E4E7;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #64748B;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.tab-btn.active {
+    background: #4A00FF;
+    color: white;
+    border-color: #4A00FF;
+}
+
+/* --- Summary Section --- */
+.summary-section {
+    background: #fff;
+    padding: 12px 20px;
+    border: 1px solid #E4E4E7;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.summary-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.aperture-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.summary-info h2 { 
+    font-size: 16px; 
+}
+
+.summary-info p {
+    color: #64748B; 
+    font-size: 12px; 
+}
+
+.legend { 
+    font-size: 12px; 
+    font-weight: 600; 
+}
+
+.dot { 
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
+    display: inline-block; 
+    margin: 0 4px 0 12px; 
+}
+
+.dot.open { 
+    background: #00A96E; 
+}
+
+.dot.closed { 
+    background: #4A00FF;
+}
