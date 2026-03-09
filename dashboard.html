@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issue Tracker</title>
+    <link rel="stylesheet" href="dashboard-style.css">
+</head>
+<body class="dashboard-body">
+
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="brand">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Logo" class="nav-logo">
+                <span>GitHub Issues Tracker</span>
+            </div>
+            <div class="nav-right">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search issues..." 
+                           oninput="searchIssue()" 
+                           onkeypress="if(event.keyCode == 13) searchIssue()">
+                </div>
+                <button class="new-issue-btn">+ New Issue</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-wrapper">
+        <div class="filter-tabs">
+            <button class="tab-btn active" onclick="loadAll(this)">All</button>
+            <button class="tab-btn" onclick="loadStatus('open', this)">Open</button>
+            <button class="tab-btn" onclick="loadStatus('closed', this)">Closed</button>
+        </div>
+
+        <section class="summary-section">
+            <div class="summary-info">
+                <img src="assets/Aperture.png" alt="Aperture" class="aperture-icon">
+                <div class="text">
+                    <h2 id="totalCount">0 Issues</h2>
+                    <p>Track and manage your project issues</p>
+                </div>
+            </div>
+            <div class="legend">
+                <span><span class="dot open"></span> Open</span>
+                <span><span class="dot closed"></span> Closed</span>
+            </div>
+        </section>
+
+        <div id="issuesContainer" class="issues-grid">
+            </div>
+    </main>
+
+    <div id="issueModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header"></div>
+
+            <div class="modal-meta">
+                <span id="modalStatusBadge" class="status-badge-detail opened">Opened</span>
+                <span class="meta-text">
+                    Opened by <b id="modalUser">User</b> <span id="modalDate">Date</span>
+                </span>
+            </div>
+
+            <div class="modal-tags" id="modalTags"></div>
+
+            <div class="modal-body">
+                <p id="modalDesc">Issue description goes here...</p>
+            </div>
+
+            <div class="modal-footer-info">
+                <div class="info-box">
+                    <label>Assignee:</label>
+                    <p id="modalAssignee">None</p>
+                </div>
+                <div class="info-box">
+                    <label>Priority:</label>
+                    <p id="modalPriority" class="priority-badge-text">LOW</p>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="close-btn-final" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="issue-details.js"></script>
+    <script src="dashboard-script.js"></script>
+</body>
+</html>
